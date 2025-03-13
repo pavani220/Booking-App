@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+
 public class BookingActivity extends AppCompatActivity {
 
     private CalendarView calendarView;
@@ -21,6 +23,11 @@ public class BookingActivity extends AppCompatActivity {
         // Initialize CalendarView and Button
         calendarView = findViewById(R.id.calendarView);
         confirmButton = findViewById(R.id.btn_confirm_booking);
+
+        // Set today's date as the minimum date to disable past dates
+        Calendar calendar = Calendar.getInstance();
+        long currentDate = calendar.getTimeInMillis();
+        calendarView.setMinDate(currentDate);  // Disable past dates
 
         // Set listener for date selection on the CalendarView
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
