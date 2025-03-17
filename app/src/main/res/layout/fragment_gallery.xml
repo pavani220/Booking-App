@@ -6,17 +6,166 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+    <!-- Title TextView -->
+
+    <!-- Nested ScrollView for Horizontal Scrollable Images -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/imageRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- GridLayout to arrange the images in 3 rows and 2 columns -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Row 1: Drone Sales and Satellite -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/image_dronesales"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image1"
+                android:contentDescription="Drone Sales" />
+
+            <TextView
+                android:id="@+id/text_dronesales"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Drone Sales"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_satellite"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image2"
+                android:contentDescription="Satellite" />
+
+            <TextView
+                android:id="@+id/text_satellite"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Satellite"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Row 2: Soil Testing and Drone Spraying -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_soiltesting"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image3"
+                android:contentDescription="Soil Testing" />
+
+            <TextView
+                android:id="@+id/text_soiltesting"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Soil Testing"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_dronespraying"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image2"
+                android:contentDescription="Drone Spraying" />
+
+            <TextView
+                android:id="@+id/text_dronespraying"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Drone Spraying"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_agriadvisory"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image1"
+                android:contentDescription="Agri Advisory" />
+
+            <TextView
+                android:id="@+id/text_agriadvisory"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Agri Advisory"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_agirents"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/image3"
+                android:contentDescription="Agri Rents" />
+
+            <TextView
+                android:id="@+id/text_agirents"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Agri Rents"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </GridLayout>
+</androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF" />  <!-- Background Color of Calendar -->
+    <solid android:color="#fff" />  <!-- Background Color of Calendar -->
     <corners android:radius="10dp" />  <!-- Rounded corners -->
     <stroke android:color="#D1D1D1" android:width="2dp" /> <!-- Border around the calendar -->
 </shape>

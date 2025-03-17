@@ -12,7 +12,6 @@
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 
-<!-- Image Slider (ViewPager2) at the top of the page -->
 <androidx.viewpager2.widget.ViewPager2
     android:id="@+id/viewPager2"
     android:layout_width="match_parent"
@@ -22,7 +21,6 @@ android:layout_height="wrap_content">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
 
-<!-- Welcome Text below the slider -->
 <TextView
     android:id="@+id/text_home"
     android:layout_width="match_parent"
@@ -37,7 +35,6 @@ android:layout_height="wrap_content">
     app:layout_constraintEnd_toEndOf="parent"
     android:text="Drone Spraying" />
 
-<!-- Image with "Book Now" button below the welcome text -->
 <LinearLayout
     android:id="@+id/bookingLayout"
     android:orientation="vertical"
@@ -49,7 +46,6 @@ android:layout_height="wrap_content">
     app:layout_constraintEnd_toEndOf="parent"
     android:gravity="center_horizontal">
 
-    <!-- Image for booking section -->
     <ImageView
         android:id="@+id/bookingImage"
         android:layout_width="300dp"
@@ -58,7 +54,6 @@ android:layout_height="wrap_content">
         android:src="@drawable/image1"
         android:scaleType="centerCrop" />
 
-    <!-- Book Now button -->
     <Button
         android:id="@+id/btn_book_now"
         android:layout_width="wrap_content"
@@ -67,7 +62,6 @@ android:layout_height="wrap_content">
         android:layout_marginBottom="16dp"
         android:textColor="@android:color/white" />
 
-    <!-- Another Section for "Satellite Soil Testing" -->
     <TextView
         android:id="@+id/text_home2"
         android:layout_width="match_parent"
@@ -82,7 +76,6 @@ android:layout_height="wrap_content">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Image for Satellite Soil Testing -->
     <ImageView
         android:id="@+id/bookingImage2"
         android:layout_width="300dp"
