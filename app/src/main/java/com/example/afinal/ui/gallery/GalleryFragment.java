@@ -33,8 +33,7 @@ public class GalleryFragment extends Fragment {
         View root = binding.getRoot();
 
         // Set up the TextView for gallery title
-        final TextView textView = binding.textSatellite;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
 
         // Initialize ImageViews and TextViews
         imageDronesales = root.findViewById(R.id.image_dronesales);
@@ -53,11 +52,11 @@ public class GalleryFragment extends Fragment {
 
         // You can dynamically set text, change images, or handle onClick actions here
         textDronesales.setText("Drone Sales");
-        textSatellite.setText("Satellite");
-        textSoiltesting.setText("Soil Testing");
+        textSatellite.setText("Satellite Soil Testing");
+        textSoiltesting.setText("Weather Intelligence");
         textDronespraying.setText("Drone Spraying");
         textAgriadvisory.setText("Agri Advisory");
-        textAgirents.setText("Agri Rents");
+        textAgirents.setText("Special Agri Services");
 
         return root;
     }

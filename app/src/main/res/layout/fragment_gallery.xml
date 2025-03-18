@@ -21,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
-        android:orientation="horizontal"
-        android:padding="8dp">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
         <!-- Row 1: Drone Sales and Satellite -->
         <LinearLayout
@@ -35,9 +35,9 @@
             <ImageView
                 android:id="@+id/image_dronesales"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/image1"
-                android:contentDescription="Drone Sales" />
+                android:layout_height="197dp"
+                android:contentDescription="Drone Sales"
+                android:src="@drawable/img_3" />
 
             <TextView
                 android:id="@+id/text_dronesales"
@@ -59,15 +59,15 @@
                 android:id="@+id/image_satellite"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/image2"
-                android:contentDescription="Satellite" />
+                android:src="@drawable/img"
+                android:contentDescription="Satellite Soil Testing" />
 
             <TextView
                 android:id="@+id/text_satellite"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Satellite"
+                android:text="Satellite Soil Testing"
                 android:textAlignment="center"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -83,7 +83,7 @@
                 android:id="@+id/image_soiltesting"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/image3"
+                android:src="@drawable/img_4"
                 android:contentDescription="Soil Testing" />
 
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Soil Testing"
+                android:text="Weather Intelligence"
                 android:textAlignment="center"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -129,7 +129,7 @@
                 android:id="@+id/image_agriadvisory"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/image1"
+                android:src="@drawable/img_2"
                 android:contentDescription="Agri Advisory" />
 
             <TextView
@@ -152,7 +152,7 @@
                 android:id="@+id/image_agirents"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/image3"
+                android:src="@drawable/img_5"
                 android:contentDescription="Agri Rents" />
 
             <TextView
@@ -160,7 +160,7 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Agri Rents"
+                android:text="Special Agri Services"
                 android:textAlignment="center"
                 android:textSize="14sp" />
         </LinearLayout>

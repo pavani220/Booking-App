@@ -6,41 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".ui.slideshow.SlideshowFragment">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMessages"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@id/inputContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <LinearLayout
-        android:id="@+id/inputContainer"
+    <!-- ScrollView to make the content scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contact_us_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/editTextMessage"
-            android:layout_width="0dp"
+        <!-- LinearLayout for content inside the ScrollView -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Type a message"
-            android:padding="10dp"
-            android:textSize="16sp" />
+            android:padding="16dp"
+            android:layout_gravity="center">
 
-        <Button
-            android:id="@+id/btnSendMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send" />
-    </LinearLayout>
+            <!-- Heading for Our Branches -->
+            <TextView
+                android:id="@+id/heading_branches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Our Branches"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"/>
+
+
+
+            <!-- Address Section -->
+            <TextView
+                android:id="@+id/branch_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address: Balaji Nagar,Nellore"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Email Section -->
+            <TextView
+                android:id="@+id/branch_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email: bd@vurimiaiglobal.com"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Phone Section -->
+            <TextView
+                android:id="@+id/branch_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone: +91 9100035363"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Contact Form Heading -->
+            <TextView
+                android:id="@+id/contact_us_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"/>
+
+            <!-- Name Field -->
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Email Field -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Email"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Message Field -->
+            <EditText
+                android:id="@+id/messageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Message"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="16dp"
+                android:lines="4"/>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
