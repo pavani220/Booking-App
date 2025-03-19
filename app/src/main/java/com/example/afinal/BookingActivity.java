@@ -1,5 +1,7 @@
 package com.example.afinal;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,8 +40,33 @@ public class BookingActivity extends AppCompatActivity {
 
         // Set listener for Confirm Booking button
         confirmButton.setOnClickListener(v -> {
-            // You can implement the booking confirmation logic here
+            // Implement booking confirmation logic here
             Toast.makeText(BookingActivity.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
+
+            // Open the Google Form after confirming booking
+            openGoogleForm();
+
+            // Start the PaymentActivity when booking is confirmed
+            Intent intent = new Intent(BookingActivity.this, PayActivity.class);
+            startActivity(intent);
         });
     }
+
+    // Method to open the Google Form using its URL
+    private void openGoogleForm() {
+        try {
+            // Replace this with your actual Google Form URL
+            String googleFormUrl = "https://forms.gle/tqT22mxWpazFF7t9A";  // Use the actual URL of your Google Form
+
+            // Create an Intent to open the URL in a browser
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleFormUrl));
+            startActivity(intent);  // Open the Google Form in the browser or app
+        } catch (Exception e) {
+            // Handle any errors (e.g., URL malformed)
+            Toast.makeText(this, "Failed to open Google Form", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
+
+
+//https://forms.gle/RPxrnXzzHvTTf9hq5

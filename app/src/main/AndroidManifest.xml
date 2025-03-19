@@ -6,6 +6,10 @@
     <!-- Permission to make phone calls -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -43,6 +47,9 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Final.NoActionBar" />
+
+        <!-- Pay Activity -->
+
 
     </application>
 

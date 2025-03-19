@@ -9,15 +9,21 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.afinal.R;
 
+import java.util.Arrays;
+import java.util.List;
 
 public class SlideshowFragment extends Fragment {
 
     private SlideshowViewModel slideshowViewModel;
     private EditText nameEditText, emailEditText, messageEditText;
     private Button submitButton;
+    private RecyclerView timelineRecyclerView;
+    private TimelineAdapter timelineAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +37,17 @@ public class SlideshowFragment extends Fragment {
         emailEditText = root.findViewById(R.id.emailEditText);
         messageEditText = root.findViewById(R.id.messageEditText);
         submitButton = root.findViewById(R.id.submitButton);
+
+        // Find the RecyclerView for the timeline
+        timelineRecyclerView = root.findViewById(R.id.timelineRecyclerView);
+        timelineRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // List of timeline locations
+        List<String> timelineItems = Arrays.asList("Nellore", "Hyderabad", "Warangal", "Vijayawada", "Siricilla","NagarKurnool");
+
+        // Set the adapter for RecyclerView
+        timelineAdapter = new TimelineAdapter(timelineItems);
+        timelineRecyclerView.setAdapter(timelineAdapter);
 
         // Set up the submit button click listener
         submitButton.setOnClickListener(v -> {
@@ -58,5 +75,4 @@ public class SlideshowFragment extends Fragment {
         messageEditText.setText("");
     }
 }
-
 

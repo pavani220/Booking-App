@@ -72,6 +72,9 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
+
+
+
         <!-- Row 2: Soil Testing and Drone Spraying -->
         <LinearLayout
             android:orientation="vertical"

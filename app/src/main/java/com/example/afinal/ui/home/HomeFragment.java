@@ -1,6 +1,7 @@
 package com.example.afinal.ui.home;
 
-import android.content.Intent;  // Import for Intent
+import android.content.Intent;
+import android.net.Uri;  // Import for Uri
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -56,7 +57,7 @@ public class HomeFragment extends Fragment {
         };
         handler.postDelayed(runnable, 3000); // Start after 3 seconds
 
-        // Handle the "Book Now" button click
+        // Handle the "Book Now" button click for BookingActivity
         Button bookNowButton = root.findViewById(R.id.btn_book_now);
         bookNowButton.setOnClickListener(view -> {
             // Navigate to the BookingActivity when the button is clicked
@@ -64,7 +65,29 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        // Handle the "Book Now" button click for Google Form (btn_book_now2)
+        Button bookNowButton2 = root.findViewById(R.id.btn_book_now2);
+        bookNowButton2.setOnClickListener(view -> {
+            // Open the Google Form when the button is clicked
+            openGoogleForm();
+        });
+
         return root;
+    }
+
+    // Method to open the Google Form
+    private void openGoogleForm() {
+        try {
+            // Replace with your actual Google Form URL
+            String googleFormUrl = "https://forms.gle/qfSMnQeUxEujUgGm8";  // Use the actual URL of your Google Form
+
+            // Create an Intent to open the Google Form in a browser
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleFormUrl));
+            startActivity(intent);  // Open the Google Form in the browser or app
+        } catch (Exception e) {
+            // Handle any errors (e.g., URL malformed)
+            e.printStackTrace();
+        }
     }
 
     @Override

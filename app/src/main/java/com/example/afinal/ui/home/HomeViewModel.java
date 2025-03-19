@@ -15,7 +15,7 @@ public class HomeViewModel extends ViewModel {
         mImages = new MutableLiveData<>();
 
         // Set the default image list (array of drawable resources)
-        mImages.setValue(new int[]{R.drawable.image1, R.drawable.image2, R.drawable.image3});
+        mImages.setValue(new int[]{ R.drawable.image2, R.drawable.image3,R.drawable.img_4,R.drawable.img_5,R.drawable.img});
     }
 
     // Getter for the LiveData holding the images
