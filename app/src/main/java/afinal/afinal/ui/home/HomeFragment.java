@@ -69,7 +69,17 @@ public class HomeFragment extends Fragment {
         Button bookNowButton2 = root.findViewById(R.id.btn_book_now2);
         bookNowButton2.setOnClickListener(view -> {
             // Open the Google Form when the button is clicked
-            openGoogleForm();
+            Intent intent = new Intent(getActivity(), BookingActivity.class);
+            startActivity(intent);
+        });
+
+        //Handle the black rice section
+
+        Button bookNowButton3 = root.findViewById(R.id.btn_book_now3);
+        bookNowButton3.setOnClickListener(view -> {
+            // Open the Google Form when the button is clicked
+            Intent intent = new Intent(getActivity(), BookingActivity.class);
+            startActivity(intent);
         });
 
         return root;
@@ -99,3 +109,4 @@ public class HomeFragment extends Fragment {
         }
     }
 }
+

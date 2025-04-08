@@ -94,6 +94,38 @@ android:layout_height="wrap_content">
         android:layout_marginBottom="16dp"
         android:textColor="@android:color/white" />
 
+    <TextView
+        android:id="@+id/text_home3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:text="Black Rice Sale"
+        app:layout_constraintTop_toBottomOf="@+id/btn_book_now"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bookingImage3"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_6"
+        android:scaleType="centerCrop" />
+
+
+    <Button
+        android:id="@+id/btn_book_now3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Now"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -132,6 +132,14 @@
             android:text="Drone Spraying"
             android:padding="10dp"
             android:textColor="@android:color/black"/>
+
+        <RadioButton
+            android:id="@+id/rb_black_rice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Black rice Sale"
+            android:padding="10dp"
+            android:textColor="@android:color/black"/>
     </RadioGroup>
 
     <!-- Submit Booking Button -->
