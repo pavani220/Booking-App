@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context="afinal.afinal.ui.slideshow.SlideshowFragment">
 
     <!-- ScrollView to make the content scrollable -->
     <androidx.core.widget.NestedScrollView
@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="Address: Balaji Nagar, Nellore"
                 android:textSize="16sp"
+                android:layout_marginTop="25sp"
                 android:layout_marginBottom="8dp"/>
 
             <!-- Email Section -->
