@@ -102,12 +102,7 @@ public class BookingFormActivity extends AppCompatActivity {
         Booking booking = new Booking(name, phone, date, address, hectares, service);
 
         // Log the Booking object to verify the data
-        Log.d("BookingData", "Name: " + name);
-        Log.d("BookingData", "Phone: " + phone);
-        Log.d("BookingData", "Date: " + date);
-        Log.d("BookingData", "Address: " + address);
-        Log.d("BookingData", "Hectares: " + hectares);
-        Log.d("BookingData", "Service: " + service);
+        Log.d("BookingData", "Booking Object: " + booking.toString());
 
         // Generate a unique key for each booking and save it to the "bookings" node
         String bookingId = bookingsRef.push().getKey();
@@ -119,9 +114,12 @@ public class BookingFormActivity extends AppCompatActivity {
                         finish();  // Close this activity and go back to the previous screen
                     })
                     .addOnFailureListener(e -> {
-                        // Display error message
+                        // Log the error and display error message
+                        Log.e("FirebaseError", "Failed to confirm booking: " + e.getMessage());
                         Toast.makeText(this, "Failed to confirm booking", Toast.LENGTH_SHORT).show();
                     });
+        } else {
+            Toast.makeText(this, "Failed to generate booking ID", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -166,6 +164,18 @@ public class BookingFormActivity extends AppCompatActivity {
 
         public String getService() {
             return service;
+        }
+
+        @Override
+        public String toString() {
+            return "Booking{" +
+                    "name='" + name + '\'' +
+                    ", phone='" + phone + '\'' +
+                    ", date='" + date + '\'' +
+                    ", address='" + address + '\'' +
+                    ", hectares=" + hectares +
+                    ", service='" + service + '\'' +
+                    '}';
         }
     }
 }
