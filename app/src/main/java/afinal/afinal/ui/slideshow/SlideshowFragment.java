@@ -1,5 +1,4 @@
 package afinal.afinal.ui.slideshow;
-
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -11,11 +10,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.afinal.afinal.R;
-
 import java.util.Arrays;
 import java.util.List;
+
 
 public class SlideshowFragment extends Fragment {
 

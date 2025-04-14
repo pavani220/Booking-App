@@ -1,15 +1,12 @@
 package afinal.afinal.ui.slideshow;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.afinal.afinal.R;
-
 import java.util.List;
+
 
 public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.TimelineViewHolder> {
 
@@ -45,3 +42,4 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
         }
     }
 }
+

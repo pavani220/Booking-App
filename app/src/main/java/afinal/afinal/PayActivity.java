@@ -14,17 +14,17 @@ import com.afinal.afinal.R;
 
 public class PayActivity extends AppCompatActivity {
 
-    private static final String TAG = "PayActivity";  // Log tag for debugging
+    private static final String TAG = "PayActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.button);  // Ensure this layout exists
+        setContentView(R.layout.button);
 
-        // Find the button by its ID
+
         Button payButton = findViewById(R.id.button);
 
-        // Set an OnClickListener to the button to trigger the PhonePe payment
+
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class PayActivity extends AppCompatActivity {
     private void openPhonePePayment() {
         try {
             // Replace with the actual Merchant UPI ID (this is the ID the customer will use to make the payment)
-            String merchantUpiId = "merchant@upi";  // Replace with your actual UPI ID
+            String merchantUpiId = "merchant@upi";
 
             // Create the intent to launch PhonePe
             Intent intent = new Intent(Intent.ACTION_VIEW);

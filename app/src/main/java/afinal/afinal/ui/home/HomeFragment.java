@@ -1,7 +1,6 @@
 package afinal.afinal.ui.home;
-
 import android.content.Intent;
-import android.net.Uri;  // Import for Uri
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -9,13 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
-
-import afinal.afinal.BookingActivity;  // Import the BookingActivity
+import afinal.afinal.BookingActivity;
 import com.afinal.afinal.R;
 import com.afinal.afinal.databinding.FragmentHomeBinding;
 
@@ -95,7 +92,7 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleFormUrl));
             startActivity(intent);  // Open the Google Form in the browser or app
         } catch (Exception e) {
-            // Handle any errors (e.g., URL malformed)
+            // Handle any errors
             e.printStackTrace();
         }
     }
@@ -105,8 +102,7 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
         if (handler != null) {
-            handler.removeCallbacks(runnable); // Stop the sliding when the fragment is destroyed
+            handler.removeCallbacks(runnable);
         }
     }
 }
-
