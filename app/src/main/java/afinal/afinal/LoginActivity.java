@@ -1,5 +1,4 @@
 package afinal.afinal;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.afinal.afinal.R;
+
 
 public class LoginActivity extends AppCompatActivity {
     EditText email, password;

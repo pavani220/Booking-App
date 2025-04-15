@@ -1,5 +1,4 @@
 package afinal.afinal;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -17,7 +15,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
 import com.afinal.afinal.R;
 import com.afinal.afinal.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //  Check if user is logged in
+        // 🔐 Check if user is logged in
         SessionManager sessionManager = new SessionManager(this);
         if (!sessionManager.isLoggedIn()) {
             // Redirect to login screen
@@ -87,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    //  Handle call permission request
+    // 📞 Handle call permission request
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -101,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 
     //  Logout option in menu
     @Override
@@ -120,5 +118,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
+
 }
