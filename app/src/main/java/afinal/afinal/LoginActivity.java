@@ -1,19 +1,24 @@
 package afinal.afinal;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import com.afinal.afinal.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.afinal.afinal.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+
     EditText email, password;
     Button loginBtn;
     TextView toSignup;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         toSignup = findViewById(R.id.toSignup);
 
-        // Redirect to SignupActivity if user doesn't have an account
+        mAuth = FirebaseAuth.getInstance();
+
+        // Go to signup screen
         toSignup.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             finish();
@@ -35,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
             String enteredEmail = email.getText().toString().trim();
             String enteredPassword = password.getText().toString().trim();
 
-            // Validate fields
             if (enteredEmail.isEmpty()) {
                 email.setError("Email is required");
                 return;
@@ -46,25 +52,29 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // Check if the email and password match the stored data (this example uses SharedPreferences)
-            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-            String storedEmail = sharedPreferences.getString("email", "");
-            String storedPassword = sharedPreferences.getString("password", "");
-
-            // Check if the entered credentials match the stored credentials
-            if (enteredEmail.equals(storedEmail) && enteredPassword.equals(storedPassword)) {
-                // Mark the user as logged in
-                SessionManager sessionManager = new SessionManager(LoginActivity.this);
-                sessionManager.setLogin(true); // Set login status to true
-
-                // Navigate to MainActivity (Home Page)
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish(); // Close LoginActivity
-            } else {
-                // Show error message if credentials are incorrect
-                Toast.makeText(LoginActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
-            }
+            loginUser(enteredEmail, enteredPassword);
         });
+    }
+
+    private void loginUser(String enteredEmail, String enteredPassword) {
+        mAuth.signInWithEmailAndPassword(enteredEmail, enteredPassword)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+
+                        // ✅ Save login state
+                        SessionManager sessionManager = new SessionManager(LoginActivity.this);
+                        sessionManager.setLogin(true);
+
+                        // ✅ Navigate to MainActivity & clear backstack
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 }

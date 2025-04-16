@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "197611150384",
+    "firebase_url": "https://vurimi-ai-agriwings-default-rtdb.firebaseio.com",
     "project_id": "vurimi-ai-agriwings",
     "storage_bucket": "vurimi-ai-agriwings.firebasestorage.app"
   },
